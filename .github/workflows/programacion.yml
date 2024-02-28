@@ -1,0 +1,23 @@
+name: Ejecutar Script Cada 15 Días
+
+on:
+  schedule:
+    # Programado para correr a las 00:00 (UTC) cada 15 días
+    #- cron: '0 0 */15 * *'
+    - cron: '1 * * * *' #cada hora para testear
+
+jobs:
+  ejecutar-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Configurar Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Instalar dependencias
+      run: |
+        pip install random datetime
+    - name: Ejecutar script
+      run: python loteria.py
