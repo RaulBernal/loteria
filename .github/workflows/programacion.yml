@@ -16,8 +16,8 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
-    - name: Instalar dependencias
-      run: |
-        pip install random datetime
+#    - name: Instalar dependencias
+#      run: |
+#        pip install random datetime
     - name: Ejecutar script
       run: python loteria.py
